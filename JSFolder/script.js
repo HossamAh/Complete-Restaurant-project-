@@ -32,16 +32,3 @@ menu_close.addEventListener("click",()=>{
 	console.log("menu close")
 	body.removeAttribute("class");
 });
-
-// /*projects */
-// let projects_sec = document.getElementsByClassName("projects")[0];
-// projects_sec.addEventListener("click",()=>{
-// 	console.log("projects on");
-// 	body.setAttribute("class","projects-on");
-	
-// });
-// let projects_close = document.getElementsByClassName("projects-close")[0];
-// projects_close.addEventListener("click",()=>{
-// 	console.log("projects close")
-// 	body.removeAttribute("class");
-// });
