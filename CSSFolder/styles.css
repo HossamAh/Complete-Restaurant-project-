@@ -21,11 +21,16 @@ body{
 }
 
     
-@media screen and (max-width: 580px){
-    body{
-        overflow: visible;
+@media screen and (max-width:500px){
+    body .About-h2 {
+        font-size: 2em;
+    }
+    body .AboutParagraph-article{
+        overflow: scroll;
+        font-size: 1em;
     }
 }
+
 header{
     flex: 1 1 15vh;
     height: 15vh;
@@ -239,19 +244,24 @@ body.about-on .HomePage {
     transform: rotateX(-10deg);
     transition-delay: 0ms;
 }
-body.skills-on .HomePage {
+body.menu-on .HomePage {
     transform: rotateX(-10deg);
     transition-delay: 0ms;
 }
-body.projects-on .HomePage {
+body.book-on .HomePage {
+    transform: rotateX(-10deg);
+    transition-delay: 0ms;
+}
+body.contact-on .HomePage {
     transform: rotateX(-10deg);
     transition-delay: 0ms;
 }
 
 
 .about-close,
-.skills-close,
-.projects-close {
+.menu-close,
+.book-close,
+.contact-close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -271,8 +281,9 @@ body.projects-on .HomePage {
 }
 
 .about-close:hover,
-.skills-close:hover,
-.projects-close:hover {
+.menu-close:hover,
+.book-close:hover,
+.contact-close {
     transform: rotate(90deg);
 }
 body.about-on .about-section {
@@ -280,17 +291,21 @@ body.about-on .about-section {
     top: 0;
     transition-delay: 400ms;
 }
-body.skills-on .skills-section {
+body.menu-on .menu-section {
     top: 0;
     transition-delay: 400ms;
 }
-body.projects-on .projects-section {
+body.book-on .book-section {
+    top: 0; 
+    transition-delay: 400ms;
+}
+body.contact-on .contact-section {
     top: 0;
     transition-delay: 400ms;
 }
 
-
-.about-section{
+.Contact-section,
+.book-section{
     /*put this section at fixed posiion above the main body*/
     position: fixed;
     top: 100%;
@@ -304,23 +319,45 @@ body.projects-on .projects-section {
     background-color: rgba(31,32,41,1);
     transition: all 300ms linear;
     z-index: 10;
+    max-height: 100vh;
 }
 
+
+
+/*About */
+.about-section{
+    /*put this section at fixed posiion above the main body*/
+    position: fixed;
+    top: 100%;
+    left: 0;
+    padding: 100px 0;
+    width: 100%;
+    height: 80vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(31,32,41,1);
+    transition: all 300ms linear;
+    z-index: 10;
+    max-height: 100vh;
+}
 .about-section section{
+    position: absolute;
+    top: 20px;
     display: flex;
     flex-flow: column nowrap;
-    height: 100vh;
+    height: 80vh;
 }
 .about-section .logo-img{
     flex:0;
     width: 80vw;
-    max-height:20vh;
+    max-height:15vh;
     margin-left: 10%;
     margin-right: 10%;
     
 }
 .About-h2{
-    flex: 0;
+    flex: 0 1;
     text-align: center;
     font-size: 4em;
     color: white;
@@ -335,10 +372,120 @@ body.projects-on .projects-section {
     background-color: rgb(128, 128, 128,60%);
     margin-left: 1em;
     margin-right: 1em;
-    padding: 1em;
+    padding: 0.5em;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.AboutParagraph-article:hover{
-    overflow: visible;
+/* .AboutParagraph-article:hover{
+    overflow: scroll;
+} */
+@media screen and (min-width: 700px){
+
+}
+
+
+.menu-section{
+    /*put this section at fixed posiion above the main body*/
+    position: fixed;
+    top: 100%;
+    left: 0;
+    padding: 100px 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(31,32,41,1);
+    transition: all 300ms linear;
+    z-index: 10;
+}
+.menu-container{
+    position: absolute;
+    top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas:"logo" 
+                        "title" 
+                         "dishes"
+                         "button";
+    grid-gap: 2vh;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.menu-container .logo-row{
+    grid-area: logo;
+    grid-column: 1/ span 12 ;
+}
+.menu-container .logo-row img{
+    height: 100%;
+    width: 80%;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.menu-container .title-row{
+    grid-area: title;
+    grid-column: 1/ span 12;
+    /* grid-row: auto; */
+    text-align: center;
+    max-height: 20vw;
+}
+.menu-container .title-row h2{
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 2px 5px yellow;
+}
+.menu-container .title-row .alert{
+    color: black;
+    font-size: 1.5em;
+    width: 80%;
+    background-color: aquamarine;
+    opacity: 60%;
+    border-radius: 2em;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.menu-container .dishes-row{
+    grid-area: dishes;
+    grid-column: 1/ span 12;
+    /* grid-row: auto; */
+    text-align: center;
+    display: flex;
+    gap: 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    max-height: 50vw;
+    background-color: antiquewhite;
+    opacity: 60%;
+    border-radius: 2em;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.menu-container .dishes-row h2{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.menu-container .dishes-row p{
+    font-size:1em ;
+}
+.menu-container .dishes-row .badge{
+    font-size:1em ;
+    color: white;
+    background-color: orangered;
+    padding: 2px;
+    border-radius: 5px;  
+}
+.menu-container .button-row{
+    grid-area: button;
+    grid-column:4/ span 6
+    
+}
+.menu-container .button-row .btn{
+    width: 100%;
+    color: white;
+    font-size: 1.2em;
 }

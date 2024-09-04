@@ -14,18 +14,24 @@ about_close.addEventListener("click",()=>{
 });
 
 
-// /*Skills */
-// let skills_sec = document.getElementsByClassName("skills")[0];
-// skills_sec.addEventListener("click",()=>{
-// 	console.log("skills on");
-// 	body.setAttribute("class","skills-on");
+/*Menu */
+let menu_sec = document.getElementsByClassName("menu")[0];
+menu_sec.addEventListener("click",()=>{
+	console.log("menu on");
+	body.setAttribute("class","menu-on");
 	
-// });
-// let skills_close = document.getElementsByClassName("skills-close")[0];
-// skills_close.addEventListener("click",()=>{
-// 	console.log("skills close")
-// 	body.removeAttribute("class");
-// });
+});
+let menu2_sec = document.getElementsByClassName("menu")[1];
+menu2_sec.addEventListener("click",()=>{
+	console.log("menu on");
+	body.setAttribute("class","menu-on");
+	
+});
+let menu_close = document.getElementsByClassName("menu-close")[0];
+menu_close.addEventListener("click",()=>{
+	console.log("menu close")
+	body.removeAttribute("class");
+});
 
 // /*projects */
 // let projects_sec = document.getElementsByClassName("projects")[0];
