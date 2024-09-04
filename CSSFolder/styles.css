@@ -4,6 +4,7 @@
     
 }
 body{
+    position: fixed;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -13,6 +14,10 @@ body{
     overflow: hidden;
     height: 100vh;
     /* gap: 1vh; */
+    /* -webkit-transition: all 500ms linear;  */
+    transition: all 500ms linear;
+    perspective: 800px;
+
 }
 
     
@@ -24,17 +29,16 @@ body{
 header{
     flex: 1 1 15vh;
     height: 15vh;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    
     display: block;
     width: 80vw;
+    margin: 0.5em;
 }
 header .logo-img{
     width: 80vw;
     max-height:100%;
     margin-left: 10%;
     margin-right: 10%;
+    
 }
 
 
@@ -134,6 +138,10 @@ main{
 }
 .features-article:hover{
     overflow: visible;
+    flex: 5;
+}
+.features-article:hover img{
+    width: 30vw;
 }
 .promo-article{
     flex: 1 0 15vh;
@@ -186,7 +194,6 @@ article img{
     width: 20vw;
     height: 20vh;
 }
-
 .btn{
     flex: 1 1;
     background-color: rgb(156, 35, 35);
@@ -225,4 +232,113 @@ footer .copyRight{
     font-size: 1em;
     color: grey;
     float: right;
+}
+
+
+body.about-on .HomePage {
+    transform: rotateX(-10deg);
+    transition-delay: 0ms;
+}
+body.skills-on .HomePage {
+    transform: rotateX(-10deg);
+    transition-delay: 0ms;
+}
+body.projects-on .HomePage {
+    transform: rotateX(-10deg);
+    transition-delay: 0ms;
+}
+
+
+.about-close,
+.skills-close,
+.projects-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    flex: 0;
+    display: block;
+    overflow: hidden;
+    height: 30px;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+    cursor: pointer;
+    z-index: 11;
+}
+
+.about-close:hover,
+.skills-close:hover,
+.projects-close:hover {
+    transform: rotate(90deg);
+}
+body.about-on .about-section {
+    /*move the section to bottom to appear above the main body*/
+    top: 0;
+    transition-delay: 400ms;
+}
+body.skills-on .skills-section {
+    top: 0;
+    transition-delay: 400ms;
+}
+body.projects-on .projects-section {
+    top: 0;
+    transition-delay: 400ms;
+}
+
+
+.about-section{
+    /*put this section at fixed posiion above the main body*/
+    position: fixed;
+    top: 100%;
+    left: 0;
+    padding: 100px 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(31,32,41,1);
+    transition: all 300ms linear;
+    z-index: 10;
+}
+
+.about-section section{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+}
+.about-section .logo-img{
+    flex:0;
+    width: 80vw;
+    max-height:20vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+.About-h2{
+    flex: 0;
+    text-align: center;
+    font-size: 4em;
+    color: white;
+    text-shadow: 1px 3px 5px yellow;
+}
+.AboutParagraph-article{
+    /* flex: 1; */
+    height: fit-content;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 2em;
+    background-color: rgb(128, 128, 128,60%);
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.AboutParagraph-article:hover{
+    overflow: visible;
 }
