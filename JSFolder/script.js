@@ -32,3 +32,12 @@ menu_close.addEventListener("click",()=>{
 	console.log("menu close")
 	body.removeAttribute("class");
 });
+
+let book_sec = document.getElementsByClassName("book")[0];
+book_sec.addEventListener('click',()=>{
+	body.setAttribute("class","book-on");
+});
+let book_close = document.getElementsByClassName("book-close")[0];
+book_close.addEventListener('click',()=>{
+	body.removeAttribute("class","book-on");
+});

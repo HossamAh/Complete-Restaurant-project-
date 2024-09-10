@@ -304,8 +304,7 @@ body.contact-on .contact-section {
     transition-delay: 400ms;
 }
 
-.Contact-section,
-.book-section{
+.Contact-section{
     /*put this section at fixed posiion above the main body*/
     position: fixed;
     top: 100%;
@@ -359,21 +358,21 @@ body.contact-on .contact-section {
 .About-h2{
     flex: 0 1;
     text-align: center;
-    font-size: 4em;
+    font-size: 8vw;
     color: white;
     text-shadow: 1px 3px 5px yellow;
 }
 .AboutParagraph-article{
     /* flex: 1; */
     height: fit-content;
-    font-size: 1.5em;
+    font-size: 3vh;
     color: white;
     border-radius: 2em;
     background-color: rgb(128, 128, 128,60%);
     margin-left: 1em;
     margin-right: 1em;
     padding: 0.5em;
-    overflow: hidden;
+    /* overflow: hidden;     */
     text-overflow: ellipsis;
 }
 /* .AboutParagraph-article:hover{
@@ -392,6 +391,8 @@ body.contact-on .contact-section {
     padding: 100px 0;
     width: 100%;
     height: 100vh;
+    display: flex;
+    max-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: rgba(31,32,41,1);
@@ -401,21 +402,15 @@ body.contact-on .contact-section {
 .menu-container{
     position: absolute;
     top: 20px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 2fr 1fr;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-areas:"logo" 
-                        "title" 
-                         "dishes"
-                         "button";
-    grid-gap: 2vh;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    justify-content: stretch;
     width: 100%;
     height: 100vh;
 }
 .menu-container .logo-row{
-    grid-area: logo;
-    grid-column: 1/ span 12 ;
+ max-height: 20vh;   
 }
 .menu-container .logo-row img{
     height: 100%;
@@ -424,11 +419,9 @@ body.contact-on .contact-section {
     margin-right: 10vw;
 }
 .menu-container .title-row{
-    grid-area: title;
-    grid-column: 1/ span 12;
-    /* grid-row: auto; */
+    align-self: center;
     text-align: center;
-    max-height: 20vw;
+    max-height: 20vh;
 }
 .menu-container .title-row h2{
     color: white;
@@ -447,9 +440,7 @@ body.contact-on .contact-section {
 }
 
 .menu-container .dishes-row{
-    grid-area: dishes;
-    grid-column: 1/ span 12;
-    /* grid-row: auto; */
+    flex: 1;
     text-align: center;
     display: flex;
     gap: 5vw;
@@ -480,12 +471,97 @@ body.contact-on .contact-section {
     border-radius: 5px;  
 }
 .menu-container .button-row{
-    grid-area: button;
-    grid-column:4/ span 6
-    
+    flex: 1;
+    min-height: 10vh;
+    align-self: center;
 }
 .menu-container .button-row .btn{
     width: 100%;
     color: white;
     font-size: 1.2em;
+}
+
+.book-section{
+    /*put this section at fixed posiion above the main body*/
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(31,32,41,1);
+    transition: all 300ms linear;
+    z-index: 10;   
+}
+.book-section .book-close{
+    flex: 0 0 2vh;
+}
+.book-section img{
+    height: 100%;
+    width: 80%;
+    margin-left: 10vw;
+    margin-right: 10vw;   
+    max-height: 20vh;
+    flex: 0 0 20vh;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+.book-section h2{
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 2px 5px yellow;   
+    align-self: center;
+    flex: 0 0 10vh;
+}
+.book-section form{
+    flex: 1 0 60vh;
+    align-self: center;
+    max-height: 50vh;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px yellow;
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    display: grid;
+    grid-gap: 5px;
+    justify-content: stretch;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.book-section form input:focus:invalid{
+    border:3px solid red ;
+    color: red;
+}
+.book-section form label{
+    font-size: 5vw;
+    font-weight: bold;
+}
+.book-section form #table_size label{
+    font-size: 4vw;
+    font-weight: unset;
+}
+.book-section form #table_size legend{
+    font-size: 5vw;
+    font-weight: bold;
+}
+.book-section form input{
+    border-radius: 5px;
+    background-color: rgb(158, 157, 157);
+}
+.book-section form button{
+    background-color: rgb(156, 35, 35);
+    padding: 1vh;
+    margin-bottom: 2px;
+    border-radius: 2em;
+    color: white;
+    font-size: 4vw;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
