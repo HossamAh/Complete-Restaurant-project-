@@ -13,8 +13,6 @@ body{
     width: 100%;
     overflow: hidden;
     height: 100vh;
-    /* gap: 1vh; */
-    /* -webkit-transition: all 500ms linear;  */
     transition: all 500ms linear;
     perspective: 800px;
 
@@ -22,18 +20,16 @@ body{
 
     
 @media screen and (max-width:500px){
-    body .About-h2 {
-        font-size: 2em;
-    }
     body .AboutParagraph-article{
         overflow: scroll;
-        font-size: 1em;
+        /* font-size: 2vw; */
     }
 }
 
 header{
-    flex: 1 1 15vh;
-    height: 15vh;
+    flex: 0 0 20vh;
+    height: 100%;
+    max-height: 20vh;
     display: block;
     width: 80vw;
     margin: 0.5em;
@@ -131,7 +127,7 @@ main{
     color: white;
     border-radius: 2em;
     background-color: rgb(128, 128, 128,60%);
-    padding: 1em;
+    padding: 1vh;
     text-align: center;
     height: 35vh;
     display: flex;
@@ -139,14 +135,33 @@ main{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-
 }
 .features-article:hover{
     overflow: visible;
-    flex: 5;
+    flex: 3;
+}
+.features-article:hover .features-article:not(:hover){
+    overflow: hidden;
+    flex: 2;
+}
+.features-article:hover .features-article:not(:hover) img{
+    max-height: 5vh;
+}
+.features-article:hover .features-article:not(:hover) .btn{
+    text-overflow: ellipsis;
+    max-height: 2vh;
+}
+
+.features-article img{
+    width: 100%;
+    max-height: 50%;
+    border-radius:2em ;
+    align-self: flex-start;
 }
 .features-article:hover img{
-    width: 30vw;
+    width: 100%;
+    flex: 2;
+    justify-self: flex-start;
 }
 .promo-article{
     flex: 1 0 15vh;
@@ -169,14 +184,17 @@ main{
 }
 article h2{
     color: black;
-    font-size: 1.25em;
+    font-size: 100%;
 }
 article p{
     flex: 1;
-    margin: 0.5rem;
+    margin: 1vh;
+    flex: 2 0 5vh;
    align-self: center;
    text-overflow: ellipsis;
    overflow: hidden;
+   font-size: 100%;
+
 }
 article:hover p{
    overflow: visible;
@@ -200,19 +218,20 @@ article img{
     height: 20vh;
 }
 .btn{
-    flex: 1 1;
+    flex: 0 1 1vh;
     background-color: rgb(156, 35, 35);
-    padding: 1em;
+    padding: 1vh;
     margin-bottom: 2px;
     border-radius: 2em;
 }
 .btn a{
     text-decoration: none;
     color: white;
-    font-size: 1em;
+    font-size: 100%;
 }
 footer{
-    flex: 1 0 5vh;
+    flex: 0 0 5vh;
+    max-height: 5vh;
     justify-self: flex-end;
     display: flex;
     flex-wrap: wrap;
@@ -228,7 +247,7 @@ footer div{
 }
 .img img{
     max-width: 100%;
-    max-height: 15vh;
+    max-height: 10vh;
 }
 footer .copyRight{
     border-top:2px solid black;
@@ -489,6 +508,7 @@ body.contact-on .contact-section {
     width: 100%;
     height: 100vh;
     display: flex;
+    gap: 1vh;
     flex-direction: column;
     justify-content: flex-start;
     max-height: 100vh;
@@ -513,15 +533,16 @@ body.contact-on .contact-section {
 }
 .book-section h2{
     color: white;
-    font-size: 2em;
+    font-size: 3vw;
     text-shadow: 1px 2px 5px yellow;   
     align-self: center;
-    flex: 0 0 10vh;
+    /* flex: 0 0 10vh; */
 }
 .book-section form{
-    flex: 1 0 60vh;
+    flex: 1 0;
     align-self: center;
-    max-height: 50vh;
+    max-height: fit-content;
+    margin-bottom: 3vh;
     background-color: whitesmoke;
     box-shadow: 2px 2px 5px yellow;
     border: none;
@@ -539,15 +560,15 @@ body.contact-on .contact-section {
     color: red;
 }
 .book-section form label{
-    font-size: 5vw;
+    font-size: 2vw;
     font-weight: bold;
 }
 .book-section form #table_size label{
-    font-size: 4vw;
+    font-size: 2vw;
     font-weight: unset;
 }
 .book-section form #table_size legend{
-    font-size: 5vw;
+    font-size: 2vw;
     font-weight: bold;
 }
 .book-section form input{
@@ -560,7 +581,7 @@ body.contact-on .contact-section {
     margin-bottom: 2px;
     border-radius: 2em;
     color: white;
-    font-size: 4vw;
+    font-size: 2vw;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
